@@ -41,6 +41,7 @@ use App\Http\Controllers\PageOptionController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductTaxController;
 use App\Http\Controllers\PlanRequestController;
+use App\Http\Controllers\RecordBahanController;
 use App\Http\Controllers\BanktransferController;
 use App\Http\Controllers\EmailTemplateController;
 use App\Http\Controllers\KategoriBahanController;
@@ -688,3 +689,11 @@ Route::post('/food-process/store/{id}',[FoodController::class,'foodProcessStore'
 Route::get('/food-process/edit/{id_food_process}',[FoodController::class,'foodProcessEdit'])->name('food.process.edit');
 Route::post('/food-process/update/{id_food_process}',[FoodController::class,'foodProcessUpdate'])->name('food.process.update');
 Route::get('/food-process/delete/{id_food_process}',[FoodController::class,'foodProcessDelete'])->name('food.process.delete');
+
+
+
+
+Route::get('/record_bahan',[RecordBahanController::class,'index'])->name('record.bahan.index');
+Route::get('/record_bahan/delete/{id}',[RecordBahanController::class,'destroy'])->name('record.bahan.delete');
+Route::post('/record_bahan/data',[RecordBahanController::class,'data'])->name('record.bahan.data');
+Route::get('/record_bahan/table',[RecordBahanController::class,'table'])->name('record.bahan.table');
