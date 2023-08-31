@@ -52,6 +52,7 @@ use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\PaymentWallPaymentController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\LandingPageSectionsController;
+use App\Http\Controllers\BahanTambahanProduksiController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Customer\Auth\CustomerLoginController;
 
@@ -642,3 +643,16 @@ Route::post('/bahan_dasar/store',[BahanDasarController::class,'store'])->name('b
 Route::get('/bahan_dasar/edit/{id}',[BahanDasarController::class,'edit'])->name('bahan.dasar.edit');
 Route::post('/bahan_dasar/update/{id}',[BahanDasarController::class,'update'])->name('bahan.dasar.update');
 Route::get('/bahan_dasar/delete/{id}',[BahanDasarController::class,'destroy'])->name('bahan.dasar.delete');
+
+
+// pemakaian bahan tambahan produksi
+Route::get('/bahan_tambahan_produksi',[BahanTambahanProduksiController::class,'index'])->name('bahan.tambahan.produksi.index');
+Route::get('/bahan_tambahan_produksi/create',[BahanTambahanProduksiController::class,'create'])->name('bahan.tambahan.produksi.create');
+Route::post('/bahan_tambahan_produksi/store',[BahanTambahanProduksiController::class,'store'])->name('bahan.tambahan.produksi.store');
+Route::get('/bahan_tambahan_produksi/edit/{id}',[BahanTambahanProduksiController::class,'edit'])->name('bahan.tambahan.produksi.edit');
+Route::post('/bahan_tambahan_produksi/update/{id}',[BahanTambahanProduksiController::class,'update'])->name('bahan.tambahan.produksi.update');
+Route::get('/bahan_tambahan_produksi/delete/{id}',[BahanTambahanProduksiController::class,'destroy'])->name('bahan.tambahan.produksi.delete');
+Route::get('/bahan_data/{id}',[BahanDasarController::class,'dataBahanDasar'])->name('data.bahan.dasar');
+Route::get('/bahan_tambahan_data_by_warehouse/{id_warehouse}',[BahanDasarController::class,'dataBahanTambahan'])->name('data.bahan.tambahan');
+Route::get('/harga_bahan_tambahan_data_by_warehouse/{id_warehouse}/{id_bahan_dasar}',[BahanDasarController::class,'hargaBahanTambahan'])->name('harga.bahan.tambahan');
+

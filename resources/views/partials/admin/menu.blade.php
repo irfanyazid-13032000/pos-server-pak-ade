@@ -226,7 +226,7 @@
                                 <a class="dash-link" href="{{ route('bahan.dasar.index') }}">Bahan Produksi</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
-                                <a class="dash-link" href="{{ route('roles.index') }}">Pemakaian Bahan Tambahan Produksi</a>
+                                <a class="dash-link" href="{{ route('bahan.tambahan.produksi.index') }}">Pemakaian Bahan Tambahan Produksi</a>
                             </li>
                         @endcan
                         @can('Manage User')
