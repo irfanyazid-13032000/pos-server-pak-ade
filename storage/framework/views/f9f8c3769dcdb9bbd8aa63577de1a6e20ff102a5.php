@@ -240,6 +240,8 @@
         }
     </script>
 
+    <?php echo $__env->yieldPushContent('addon-script'); ?>
+
 </body>
 
 </html>

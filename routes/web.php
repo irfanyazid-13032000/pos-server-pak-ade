@@ -30,6 +30,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ToyyibpayController;
+use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\AiTemplateController;
 use App\Http\Controllers\PageOptionController;
 use App\Http\Controllers\PermissionController;
@@ -40,7 +41,9 @@ use App\Http\Controllers\EmailTemplateController;
 use App\Http\Controllers\ProductCouponController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\BenefitPaymentController;
+use App\Http\Controllers\WarehouseStockController;
 use App\Http\Controllers\ExpresscheckoutController;
+use App\Http\Controllers\WarehouseRecordController;
 use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\PaymentWallPaymentController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -560,10 +563,30 @@ Route::post('generate/response', [AiTemplateController::class, 'AiGenerate'])->n
 
 
 
-
+// vendor
 Route::get('/fendor',[VendorController::class,'index'])->name('vendor.index');
 Route::get('/fendor/create',[VendorController::class,'create'])->name('vendor.create');
 Route::post('/fendor/store',[VendorController::class,'store'])->name('vendor.store');
 Route::get('/fendor/edit/{id}',[VendorController::class,'edit'])->name('vendor.edit');
 Route::post('/fendor/update/{id}',[VendorController::class,'update'])->name('vendor.update');
 Route::get('/fendor/delete/{id}',[VendorController::class,'destroy'])->name('vendor.destroy');
+
+
+// warehouse
+Route::get('/warehouse',[WarehouseController::class,'index'])->name('warehouse.index');
+Route::get('/warehouse/create',[WarehouseController::class,'create'])->name('warehouse.create');
+Route::post('/warehouse/store',[WarehouseController::class,'store'])->name('warehouse.store');
+Route::get('/warehouse/{id}/edit',[WarehouseController::class,'edit'])->name('warehouse.edit');
+Route::post('/warehouse/{id}/update',[WarehouseController::class,'update'])->name('warehouse.update');
+Route::get('/warehouse/{id}/delete',[WarehouseController::class,'destroy'])->name('warehouse.delete');
+
+
+// warehouse stock
+Route::get('/warehouse-stock/{id_warehouse}',[WarehouseStockController::class,'index'])->name('warehouse.stock.index');
+Route::get('/warehouse-stock/{id_warehouse}/create',[WarehouseStockController::class,'create'])->name('warehouse.stock.create');
+Route::post('/warehouse-stock/{id_warehouse}/store',[WarehouseStockController::class,'store'])->name('warehouse.stock.store');
+Route::get('/warehouse-stock/{id_warehouse}/delete/{stock_id}',[WarehouseStockController::class,'destroy'])->name('warehouse.stock.delete');
+Route::get('/warehouse-stock/{id_warehouse}/edit/{stock_id}',[WarehouseStockController::class,'edit'])->name('warehouse.stock.edit');
+
+
+Route::get('/warehouse-record/{id_warehouse}',[WarehouseRecordController::class,'index'])->name('warehouse.record.index');
