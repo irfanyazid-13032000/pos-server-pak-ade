@@ -303,7 +303,32 @@
                         class="dash-submenu {{ Request::segment(1) == 'roles' || Request::segment(1) == 'roles' ? ' show' : '' }}">
                         @can('Manage Products')
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
-                                <a class="dash-link" href="{{ route('record.bahan.index') }}">Record</a>
+                                <a class="dash-link" href="{{ route('record.bahan.index') }}">Record Bahan</a>
+                            </li>
+                        @endcan
+                        @can('Manage User')
+                            
+                        @endcan
+                    </ul>
+                </li>
+
+
+                <li
+                    class="dash-item dash-hasmenu {{ Request::segment(1) == 'users' || Request::segment(1) == 'roles' ? ' active dash-trigger' : 'collapsed' }}">
+                    <a href="#!" class="dash-link ">
+                        <span class="dash-micon">
+                            <i class="ti ti-users"></i>
+                        </span>
+                        <span class="dash-mtext">Produksi</span>
+                        <span class="dash-arrow">
+                            <i data-feather="chevron-right"></i>
+                        </span>
+                    </a>
+                    <ul
+                        class="dash-submenu {{ Request::segment(1) == 'roles' || Request::segment(1) == 'roles' ? ' show' : '' }}">
+                        @can('Manage Products')
+                            <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
+                                <a class="dash-link" href="{{ route('kategori.proses.produksi.index') }}">Kategori Proses Produksi</a>
                             </li>
                         @endcan
                         @can('Manage User')

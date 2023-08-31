@@ -56,6 +56,7 @@ use App\Http\Controllers\PaymentWallPaymentController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\LandingPageSectionsController;
 use App\Http\Controllers\BahanTambahanProduksiController;
+use App\Http\Controllers\KategoriProsesProduksiController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Customer\Auth\CustomerLoginController;
 
@@ -692,8 +693,17 @@ Route::get('/food-process/delete/{id_food_process}',[FoodController::class,'food
 
 
 
-
+// record bahan
 Route::get('/record_bahan',[RecordBahanController::class,'index'])->name('record.bahan.index');
 Route::get('/record_bahan/delete/{id}',[RecordBahanController::class,'destroy'])->name('record.bahan.delete');
 Route::post('/record_bahan/data',[RecordBahanController::class,'data'])->name('record.bahan.data');
 Route::get('/record_bahan/table',[RecordBahanController::class,'table'])->name('record.bahan.table');
+
+
+
+Route::get('/kategori_proses_produksi',[KategoriProsesProduksiController::class,'index'])->name('kategori.proses.produksi.index');
+Route::get('/kategori_proses_produksi/create',[KategoriProsesProduksiController::class,'create'])->name('kategori.proses.produksi.create');
+Route::post('/kategori_proses_produksi/store',[KategoriProsesProduksiController::class,'store'])->name('kategori.proses.produksi.store');
+Route::get('/kategori_proses_produksi/edit/{id}',[KategoriProsesProduksiController::class,'edit'])->name('kategori.proses.produksi.edit');
+Route::post('/kategori_proses_produksi/update/{id}',[KategoriProsesProduksiController::class,'update'])->name('kategori.proses.produksi.update');
+Route::get('/kategori_proses_produksi/delete/{id}',[KategoriProsesProduksiController::class,'destroy'])->name('kategori.proses.produksi.delete');
