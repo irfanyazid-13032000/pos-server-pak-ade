@@ -40,6 +40,7 @@ use App\Http\Controllers\ProductTaxController;
 use App\Http\Controllers\PlanRequestController;
 use App\Http\Controllers\BanktransferController;
 use App\Http\Controllers\EmailTemplateController;
+use App\Http\Controllers\KategoriBahanController;
 use App\Http\Controllers\ProductCouponController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\BenefitPaymentController;
@@ -603,10 +604,30 @@ Route::post('/outlet/update/{id}',[OutletController::class,'update'])->name('out
 Route::get('/outlet/delete/{id}',[OutletController::class,'destroy'])->name('outlet.delete');
 
 
-
+// satuan
 Route::get('/satuan',[SatuanController::class,'index'])->name('satuan.index');
 Route::get('/satuan/create',[SatuanController::class,'create'])->name('satuan.create');
 Route::post('/satuan/store',[SatuanController::class,'store'])->name('satuan.store');
 Route::get('/satuan/edit/{id}',[SatuanController::class,'edit'])->name('satuan.edit');
 Route::post('/satuan/update/{id}',[SatuanController::class,'update'])->name('satuan.update');
 Route::get('/satuan/delete/{id}',[SatuanController::class,'destroy'])->name('satuan.delete');
+
+
+
+// kategori bahan
+Route::get('/kategori_bahan',[KategoriBahanController::class,'index'])->name('kategori.bahan.index');
+Route::get('/kategori_bahan/create',[KategoriBahanController::class,'create'])->name('kategori.bahan.create');
+Route::post('/kategori_bahan/store',[KategoriBahanController::class,'store'])->name('kategori.bahan.store');
+Route::get('/kategori_bahan/edit/{id}',[KategoriBahanController::class,'edit'])->name('kategori.bahan.edit');
+Route::post('/kategori_bahan/update/{id}',[KategoriBahanController::class,'update'])->name('kategori.bahan.update');
+Route::get('/kategori_bahan/delete/{id}',[KategoriBahanController::class,'destroy'])->name('kategori.bahan.delete');
+
+
+
+// bahan di kategori
+Route::get('/bahan_kategori_bahan/{id}',[KategoriBahanController::class,'indexBahan'])->name('bahan.baku.kategori.bahan.index');
+Route::get('/bahan_kategori_bahan/{id}/create',[KategoriBahanController::class,'createBahan'])->name('bahan.baku.kategori.bahan.create');
+Route::post('/bahan_kategori_bahan/{id}/store',[KategoriBahanController::class,'storeBahan'])->name('bahan.baku.kategori.bahan.store');
+Route::get('/bahan_kategori_bahan/edit/{id_bahan}',[KategoriBahanController::class,'editBahan'])->name('bahan.baku.kategori.bahan.edit');
+Route::post('/bahan_kategori_bahan/update/{id_bahan}',[KategoriBahanController::class,'updateBahan'])->name('bahan.baku.kategori.bahan.update');
+Route::get('/bahan_kategori_bahan/{id}/delete/{id_bahan}',[KategoriBahanController::class,'deleteBahan'])->name('bahan.baku.kategori.bahan.delete');
