@@ -223,7 +223,7 @@
                                 <a class="dash-link" href="{{ route('kategori.bahan.index') }}">Kategori Bahan</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
-                                <a class="dash-link" href="{{ route('roles.index') }}">Bahan Produksi</a>
+                                <a class="dash-link" href="{{ route('bahan.dasar.index') }}">Bahan Produksi</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
                                 <a class="dash-link" href="{{ route('roles.index') }}">Pemakaian Bahan Tambahan Produksi</a>

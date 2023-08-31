@@ -34,6 +34,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ToyyibpayController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\AiTemplateController;
+use App\Http\Controllers\BahanDasarController;
 use App\Http\Controllers\PageOptionController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductTaxController;
@@ -631,3 +632,13 @@ Route::post('/bahan_kategori_bahan/{id}/store',[KategoriBahanController::class,'
 Route::get('/bahan_kategori_bahan/edit/{id_bahan}',[KategoriBahanController::class,'editBahan'])->name('bahan.baku.kategori.bahan.edit');
 Route::post('/bahan_kategori_bahan/update/{id_bahan}',[KategoriBahanController::class,'updateBahan'])->name('bahan.baku.kategori.bahan.update');
 Route::get('/bahan_kategori_bahan/{id}/delete/{id_bahan}',[KategoriBahanController::class,'deleteBahan'])->name('bahan.baku.kategori.bahan.delete');
+
+
+// bahan produksi & bahan dasar
+Route::get('/bahan_dasar',[BahanDasarController::class,'index'])->name('bahan.dasar.index');
+Route::get('/bahan_dasar/create',[BahanDasarController::class,'create'])->name('bahan.dasar.create');
+Route::get('/bahan_dasar/option/{id_kategori}',[BahanDasarController::class,'option'])->name('bahan.dasar.option');
+Route::post('/bahan_dasar/store',[BahanDasarController::class,'store'])->name('bahan.dasar.store');
+Route::get('/bahan_dasar/edit/{id}',[BahanDasarController::class,'edit'])->name('bahan.dasar.edit');
+Route::post('/bahan_dasar/update/{id}',[BahanDasarController::class,'update'])->name('bahan.dasar.update');
+Route::get('/bahan_dasar/delete/{id}',[BahanDasarController::class,'destroy'])->name('bahan.dasar.delete');

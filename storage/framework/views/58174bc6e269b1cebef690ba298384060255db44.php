@@ -224,7 +224,7 @@
                                 <a class="dash-link" href="<?php echo e(route('kategori.bahan.index')); ?>">Kategori Bahan</a>
                             </li>
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
-                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Bahan Produksi</a>
+                                <a class="dash-link" href="<?php echo e(route('bahan.dasar.index')); ?>">Bahan Produksi</a>
                             </li>
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
                                 <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Pemakaian Bahan Tambahan Produksi</a>
