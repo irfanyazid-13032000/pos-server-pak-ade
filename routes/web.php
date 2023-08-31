@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\StoreAnalytic;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\AamarpayController;
 use App\Http\Controllers\CashfreeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ToyyibpayController;
@@ -656,3 +658,22 @@ Route::get('/bahan_data/{id}',[BahanDasarController::class,'dataBahanDasar'])->n
 Route::get('/bahan_tambahan_data_by_warehouse/{id_warehouse}',[BahanDasarController::class,'dataBahanTambahan'])->name('data.bahan.tambahan');
 Route::get('/harga_bahan_tambahan_data_by_warehouse/{id_warehouse}/{id_bahan_dasar}',[BahanDasarController::class,'hargaBahanTambahan'])->name('harga.bahan.tambahan');
 
+
+
+// purchase
+Route::get('/vurchase',[PurchaseController::class,'index'])->name('purchase.index');
+Route::get('/vurchase/create',[PurchaseController::class,'create'])->name('purchase.create');
+Route::post('/vurchase/store',[PurchaseController::class,'store'])->name('purchase.store');
+Route::get('/vurchase/edit/{id}',[PurchaseController::class,'edit'])->name('purchase.edit');
+Route::post('/vurchase/update/{id}',[PurchaseController::class,'update'])->name('purchase.update');
+Route::get('/vurchase/delete/{id}',[PurchaseController::class,'destroy'])->name('purchase.delete');
+
+
+// food
+Route::get('/food',[FoodController::class,'index'])->name('food.index');
+Route::get('/food/create',[FoodController::class,'create'])->name('food.create');
+Route::post('/food/store',[FoodController::class,'store'])->name('food.store');
+Route::get('/food/edit/{id}',[FoodController::class,'edit'])->name('food.edit');
+Route::post('/food/update/{id}',[FoodController::class,'update'])->name('food.update');
+Route::get('/food/delete/{id}',[FoodController::class,'destroy'])->name('food.delete');
+Route::get('/food/data/{id}',[FoodController::class,'foodData'])->name('food.data');
