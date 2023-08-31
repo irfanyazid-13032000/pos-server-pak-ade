@@ -4,7 +4,7 @@
     'name' => 'make Inventory Management System',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost/pos-laravel-server',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -512,14 +512,14 @@
       array (
         'driver' => 'local',
         'root' => 'C:\\laragon\\www\\pos-laravel-server\\storage\\/',
-        'url' => 'http://localhost/storage',
+        'url' => 'http://localhost/pos-laravel-server/storage',
         'visibility' => 'public',
       ),
       'public' => 
       array (
         'driver' => 'local',
         'root' => 'C:\\laragon\\www\\pos-laravel-server\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'url' => 'http://localhost/pos-laravel-server/storage',
         'visibility' => 'public',
       ),
       's3' => 

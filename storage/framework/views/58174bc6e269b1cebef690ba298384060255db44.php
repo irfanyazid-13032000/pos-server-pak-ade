@@ -195,6 +195,54 @@
                 </li>
 
                 <li
+                    class="dash-item dash-hasmenu <?php echo e(Request::segment(1) == 'users' || Request::segment(1) == 'roles' ? ' active dash-trigger' : 'collapsed'); ?>">
+                    <a href="#!" class="dash-link ">
+                        <span class="dash-micon">
+                            <i class="ti ti-users"></i>
+                        </span>
+                        <span class="dash-mtext">Data Master</span>
+                        <span class="dash-arrow">
+                            <i data-feather="chevron-right"></i>
+                        </span>
+                    </a>
+                    <ul
+                        class="dash-submenu <?php echo e(Request::segment(1) == 'roles' || Request::segment(1) == 'roles' ? ' show' : ''); ?>">
+                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Manage Products')): ?>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('vendor.index')); ?>">Vendor</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Warehouse</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Outlet</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Outlet</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Satuan</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Kategori Bahan</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Bahan Produksi</a>
+                            </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Pemakaian Bahan Tambahan Produksi</a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Manage User')): ?>
+                            <li
+                                class="dash-item <?php echo e(Request::segment(1) == 'users.index' || Request::route()->getName() == 'users.show' ? ' active dash-trigger' : 'collapsed'); ?>">
+                                <a class="dash-link" href="<?php echo e(route('users.index')); ?>"><?php echo e(__('User')); ?></a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
+
+                <li
                     class="dash-item dash-hasmenu <?php echo e(Request::segment(1) == 'product' || Request::segment(1) == 'product_categorie' || Request::segment(1) == 'product_tax' || Request::segment(1) == 'product-coupon' || Request::segment(1) == 'shipping' || Request::segment(1) == 'subscriptions' || Request::segment(1) == 'custom-page' || Request::segment(1) == 'blog' ? ' active dash-trigger' : 'collapsed'); ?>">
                     <a href="#!" class="dash-link">
                         <span class="dash-micon">

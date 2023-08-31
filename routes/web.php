@@ -1,51 +1,52 @@
 <?php
 
-use App\Http\Controllers\AamarpayController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\PlanRequestController;
 use App\Http\Controllers\StoreAnalytic;
-use App\Http\Controllers\SettingController;
-use App\Http\Controllers\ProductCategorieController;
-use App\Http\Controllers\ProductTaxController;
-use App\Http\Controllers\ShippingController;
-use App\Http\Controllers\LocationController;
-use App\Http\Controllers\PageOptionController;
 use App\Http\Controllers\PlanController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\PaypalController;
-use App\Http\Controllers\CouponController;
-use App\Http\Controllers\ProductCouponController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\LandingPageSectionsController;
-use App\Http\Controllers\EmailTemplateController;
-use App\Http\Controllers\PaymentWallPaymentController;
-use App\Http\Controllers\PayfastController;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use App\Http\Controllers\Customer\Auth\CustomerLoginController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\BanktransferController;
-use App\Http\Controllers\ExpresscheckoutController;
-use App\Http\Controllers\IyziPayController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\SspayController;
-use App\Http\Controllers\AiTemplateController;
-use App\Http\Controllers\BenefitPaymentController;
-use App\Http\Controllers\CashfreeController;
-use App\Http\Controllers\PaytabController;
-use App\Http\Controllers\PaytrController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ToyyibpayController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaytrController;
+use App\Http\Controllers\SspayController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\CouponController;
+use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\PaytabController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\IyziPayController;
+use App\Http\Controllers\PayfastController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\WebhookController;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Http\Controllers\AamarpayController;
+use App\Http\Controllers\CashfreeController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ShippingController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ToyyibpayController;
+use App\Http\Controllers\AiTemplateController;
+use App\Http\Controllers\PageOptionController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProductTaxController;
+use App\Http\Controllers\PlanRequestController;
+use App\Http\Controllers\BanktransferController;
+use App\Http\Controllers\EmailTemplateController;
+use App\Http\Controllers\ProductCouponController;
+use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\BenefitPaymentController;
+use App\Http\Controllers\ExpresscheckoutController;
+use App\Http\Controllers\ProductCategorieController;
+use App\Http\Controllers\PaymentWallPaymentController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\LandingPageSectionsController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Customer\Auth\CustomerLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -556,3 +557,13 @@ Route::post('chatgptkey', [SettingController::class, 'chatgptkey'])->name('setti
 Route::get('generate/{template_name}', [AiTemplateController::class, 'create'])->name('generate');
 Route::post('generate/keywords/{id}', [AiTemplateController::class, 'getKeywords'])->name('generate.keywords');
 Route::post('generate/response', [AiTemplateController::class, 'AiGenerate'])->name('generate.response');
+
+
+
+
+Route::get('/fendor',[VendorController::class,'index'])->name('vendor.index');
+Route::get('/fendor/create',[VendorController::class,'create'])->name('vendor.create');
+Route::post('/fendor/store',[VendorController::class,'store'])->name('vendor.store');
+Route::get('/fendor/edit/{id}',[VendorController::class,'edit'])->name('vendor.edit');
+Route::post('/fendor/update/{id}',[VendorController::class,'update'])->name('vendor.update');
+Route::get('/fendor/delete/{id}',[VendorController::class,'destroy'])->name('vendor.destroy');
