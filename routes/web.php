@@ -677,3 +677,14 @@ Route::get('/food/edit/{id}',[FoodController::class,'edit'])->name('food.edit');
 Route::post('/food/update/{id}',[FoodController::class,'update'])->name('food.update');
 Route::get('/food/delete/{id}',[FoodController::class,'destroy'])->name('food.delete');
 Route::get('/food/data/{id}',[FoodController::class,'foodData'])->name('food.data');
+
+
+
+
+// food-process
+Route::get('/food-process/{id}',[FoodController::class,'foodProcess'])->name('food.process');
+Route::get('/food-process/create/{id}',[FoodController::class,'foodProcessCreate'])->name('food.process.create');
+Route::post('/food-process/store/{id}',[FoodController::class,'foodProcessStore'])->name('food.process.store');
+Route::get('/food-process/edit/{id_food_process}',[FoodController::class,'foodProcessEdit'])->name('food.process.edit');
+Route::post('/food-process/update/{id_food_process}',[FoodController::class,'foodProcessUpdate'])->name('food.process.update');
+Route::get('/food-process/delete/{id_food_process}',[FoodController::class,'foodProcessDelete'])->name('food.process.delete');
