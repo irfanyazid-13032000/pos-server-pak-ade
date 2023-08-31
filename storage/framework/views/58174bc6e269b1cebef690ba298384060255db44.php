@@ -215,10 +215,7 @@
                                 <a class="dash-link" href="<?php echo e(route('warehouse.index')); ?>">Warehouse</a>
                             </li>
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
-                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Outlet</a>
-                            </li>
-                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
-                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Outlet</a>
+                                <a class="dash-link" href="<?php echo e(route('outlet.index')); ?>">Outlet</a>
                             </li>
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
                                 <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Satuan</a>

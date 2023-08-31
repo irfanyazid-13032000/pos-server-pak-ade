@@ -214,10 +214,7 @@
                                 <a class="dash-link" href="{{ route('warehouse.index') }}">Warehouse</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
-                                <a class="dash-link" href="{{ route('roles.index') }}">Outlet</a>
-                            </li>
-                            <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
-                                <a class="dash-link" href="{{ route('roles.index') }}">Outlet</a>
+                                <a class="dash-link" href="{{ route('outlet.index') }}">Outlet</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
                                 <a class="dash-link" href="{{ route('roles.index') }}">Satuan</a>

@@ -13,6 +13,7 @@ use App\Http\Controllers\SspayController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\PaytabController;
 use App\Http\Controllers\VendorController;
@@ -590,3 +591,12 @@ Route::get('/warehouse-stock/{id_warehouse}/edit/{stock_id}',[WarehouseStockCont
 
 
 Route::get('/warehouse-record/{id_warehouse}',[WarehouseRecordController::class,'index'])->name('warehouse.record.index');
+
+
+// outlet
+Route::get('/outlet',[OutletController::class,'index'])->name('outlet.index');
+Route::get('/outlet/create',[OutletController::class,'create'])->name('outlet.create');
+Route::post('/outlet/store',[OutletController::class,'store'])->name('outlet.store');
+Route::get('/outlet/edit/{id}',[OutletController::class,'edit'])->name('outlet.edit');
+Route::post('/outlet/update/{id}',[OutletController::class,'update'])->name('outlet.update');
+Route::get('/outlet/delete/{id}',[OutletController::class,'destroy'])->name('outlet.delete');
