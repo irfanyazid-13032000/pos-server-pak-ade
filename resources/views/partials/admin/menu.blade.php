@@ -217,7 +217,7 @@
                                 <a class="dash-link" href="{{ route('outlet.index') }}">Outlet</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
-                                <a class="dash-link" href="{{ route('roles.index') }}">Satuan</a>
+                                <a class="dash-link" href="{{ route('satuan.index') }}">Satuan</a>
                             </li>
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
                                 <a class="dash-link" href="{{ route('roles.index') }}">Kategori Bahan</a>

@@ -218,7 +218,7 @@
                                 <a class="dash-link" href="<?php echo e(route('outlet.index')); ?>">Outlet</a>
                             </li>
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
-                                <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Satuan</a>
+                                <a class="dash-link" href="<?php echo e(route('satuan.index')); ?>">Satuan</a>
                             </li>
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
                                 <a class="dash-link" href="<?php echo e(route('roles.index')); ?>">Kategori Bahan</a>

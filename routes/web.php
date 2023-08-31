@@ -16,6 +16,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\PaytabController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\IyziPayController;
 use App\Http\Controllers\PayfastController;
@@ -600,3 +601,12 @@ Route::post('/outlet/store',[OutletController::class,'store'])->name('outlet.sto
 Route::get('/outlet/edit/{id}',[OutletController::class,'edit'])->name('outlet.edit');
 Route::post('/outlet/update/{id}',[OutletController::class,'update'])->name('outlet.update');
 Route::get('/outlet/delete/{id}',[OutletController::class,'destroy'])->name('outlet.delete');
+
+
+
+Route::get('/satuan',[SatuanController::class,'index'])->name('satuan.index');
+Route::get('/satuan/create',[SatuanController::class,'create'])->name('satuan.create');
+Route::post('/satuan/store',[SatuanController::class,'store'])->name('satuan.store');
+Route::get('/satuan/edit/{id}',[SatuanController::class,'edit'])->name('satuan.edit');
+Route::post('/satuan/update/{id}',[SatuanController::class,'update'])->name('satuan.update');
+Route::get('/satuan/delete/{id}',[SatuanController::class,'destroy'])->name('satuan.delete');
