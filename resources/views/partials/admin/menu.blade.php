@@ -330,6 +330,9 @@
                             <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
                                 <a class="dash-link" href="{{ route('kategori.proses.produksi.index') }}">Kategori Proses Produksi</a>
                             </li>
+                            <li class="dash-item {{ Request::route()->getName() == 'roles' ? ' active' : '' }}">
+                                <a class="dash-link" href="{{ route('proses.produksi.index') }}">Proses Produksi</a>
+                            </li>
                         @endcan
                         @can('Manage User')
                             

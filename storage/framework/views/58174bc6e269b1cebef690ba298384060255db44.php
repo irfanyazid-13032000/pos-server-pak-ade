@@ -331,6 +331,9 @@
                             <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
                                 <a class="dash-link" href="<?php echo e(route('kategori.proses.produksi.index')); ?>">Kategori Proses Produksi</a>
                             </li>
+                            <li class="dash-item <?php echo e(Request::route()->getName() == 'roles' ? ' active' : ''); ?>">
+                                <a class="dash-link" href="<?php echo e(route('proses.produksi.index')); ?>">Proses Produksi</a>
+                            </li>
                         <?php endif; ?>
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('Manage User')): ?>
                             
